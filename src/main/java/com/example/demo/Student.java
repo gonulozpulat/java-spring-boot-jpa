@@ -55,6 +55,12 @@ public class Student {
     )
     private Integer age;
 
+    @OneToOne(
+            mappedBy = "student", //StudentIDCard entity'sinde bulunan student modeli ile mapplendi
+            orphanRemoval = true // delete true
+    )
+    private StudentIdCard studentIdCard;
+
     public Student(String firstName, String lastName, String email, Integer age) {
         this.firstName = firstName;
         this.lastName = lastName;
